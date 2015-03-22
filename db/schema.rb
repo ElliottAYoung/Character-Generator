@@ -11,36 +11,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322200719) do
+ActiveRecord::Schema.define(version: 20150322200653) do
 
   create_table "attributes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "character_id"
+    t.integer  "str"
+    t.integer  "dex"
+    t.integer  "con"
+    t.integer  "int"
+    t.integer  "wis"
+    t.integer  "cha"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "characters", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "alignment"
+    t.string   "player"
+    t.integer  "level"
+    t.string   "deity"
+    t.string   "homeland"
+    t.integer  "race_id"
+    t.string   "gender"
+    t.integer  "age"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "haircolor"
+    t.string   "eyecolor"
+    t.integer  "hit_points"
+    t.integer  "initiative"
+    t.integer  "armor_class"
+    t.integer  "fortitude"
+    t.integer  "reflex"
+    t.integer  "willpower"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "charclasses", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "character_id"
+    t.integer  "hit_die"
+    t.integer  "skill_mod"
+    t.integer  "base_attack_bonus"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "races", force: :cascade do |t|
+    t.string   "race"
+    t.string   "size"
+    t.integer  "speed"
+    t.string   "languages"
+    t.string   "senses"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "total"
+    t.integer  "ability_mod"
+    t.integer  "ranks"
+    t.integer  "misc_mod"
+    t.string   "primary_attribute"
+    t.integer  "character_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end
