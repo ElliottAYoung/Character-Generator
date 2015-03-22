@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'race' => 'races#select', as: "select_race"
+  get 'character/information' => 'character#information', as: "character_information"
+  get 'attributes' => 'attributes#rolls', as: 'roll_attributes'
+  get 'skills' => 'skills#select', as: 'select_skills'
+  get 'class' => 'class#select', as: 'select_class'
+  get 'items' => 'items#choose', as: 'select_items'
+
+  root 'page#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
