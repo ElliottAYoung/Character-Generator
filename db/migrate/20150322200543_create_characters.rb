@@ -7,7 +7,9 @@ class CreateCharacters < ActiveRecord::Migration
       t.integer    :level
       t.string     :deity
       t.string     :homeland
+      t.belongs_to :attributes
       t.belongs_to :race
+      t.belongs_to :class
       t.string     :gender
       t.integer    :age
       t.integer    :height

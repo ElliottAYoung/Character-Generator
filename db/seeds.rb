@@ -13,4 +13,3 @@ Race.create(race: "Half-Elf", size: "Medium", speed: 30, languages: "Common, Elv
 Race.create(race: "Halfling", size: "Small", speed: 20, languages: "Common, Halfling", senses: nil)
 Race.create(race: "Half-Orc", size: "Medium", speed: 30, languages: "Common, Orc", senses: "Darkvision")
 Race.create(race: "Human", size: "Medium", speed: 30, languages: "Common", senses: nil)
-

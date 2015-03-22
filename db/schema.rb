@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322200653) do
+ActiveRecord::Schema.define(version: 20150322224943) do
 
   create_table "attributes", force: :cascade do |t|
     t.integer  "character_id"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 20150322200653) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "character_skills", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "skill_id"
+  end
+
   create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.string   "alignment"
@@ -32,7 +37,9 @@ ActiveRecord::Schema.define(version: 20150322200653) do
     t.integer  "level"
     t.string   "deity"
     t.string   "homeland"
+    t.integer  "attributes_id"
     t.integer  "race_id"
+    t.integer  "class_id"
     t.string   "gender"
     t.integer  "age"
     t.integer  "height"
@@ -45,12 +52,11 @@ ActiveRecord::Schema.define(version: 20150322200653) do
     t.integer  "fortitude"
     t.integer  "reflex"
     t.integer  "willpower"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "charclasses", force: :cascade do |t|
-    t.integer  "character_id"
     t.integer  "hit_die"
     t.integer  "skill_mod"
     t.integer  "base_attack_bonus"
@@ -74,7 +80,6 @@ ActiveRecord::Schema.define(version: 20150322200653) do
     t.integer  "ranks"
     t.integer  "misc_mod"
     t.string   "primary_attribute"
-    t.integer  "character_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

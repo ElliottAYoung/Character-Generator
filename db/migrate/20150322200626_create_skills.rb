@@ -6,7 +6,6 @@ class CreateSkills < ActiveRecord::Migration
       t.integer    :ranks
       t.integer    :misc_mod
       t.string     :primary_attribute
-      t.belongs_to :character
 
       t.timestamps null: false
     end
