@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'race' => 'races#select', as: "select_race"
-  get 'character/information' => 'character#information', as: "character_information"
+  get 'character/information' => 'characters#information', as: "character_information"
+  get 'character/new' => 'characters#new'
   get 'attributes' => 'attributes#rolls', as: 'roll_attributes'
   get 'skills' => 'skills#selasect', as: 'select_skills'
   get 'class' => 'charclass#select', as: 'select_class'
