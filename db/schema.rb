@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150325182503) do
   end
 
   create_table "charclasses", force: :cascade do |t|
+    t.string   "class_name"
     t.integer  "hit_die"
     t.integer  "skill_mod"
     t.integer  "base_attack_bonus"
