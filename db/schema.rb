@@ -11,23 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322224943) do
-
-  create_table "attributes", force: :cascade do |t|
-    t.integer  "character_id"
-    t.integer  "str"
-    t.integer  "dex"
-    t.integer  "con"
-    t.integer  "int"
-    t.integer  "wis"
-    t.integer  "cha"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
+ActiveRecord::Schema.define(version: 20150325182503) do
 
   create_table "character_skills", force: :cascade do |t|
-    t.integer "character_id"
-    t.integer "skill_id"
+    t.integer  "character_id"
+    t.integer  "skill_id"
+    t.integer  "total"
+    t.integer  "ability_bonus"
+    t.integer  "ranks"
+    t.integer  "misc_mod"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "characters", force: :cascade do |t|
@@ -37,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150322224943) do
     t.integer  "level"
     t.string   "deity"
     t.string   "homeland"
-    t.integer  "attributes_id"
     t.integer  "race_id"
     t.integer  "class_id"
     t.string   "gender"
@@ -52,8 +45,21 @@ ActiveRecord::Schema.define(version: 20150322224943) do
     t.integer  "fortitude"
     t.integer  "reflex"
     t.integer  "willpower"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "STR"
+    t.integer  "DEX"
+    t.integer  "INT"
+    t.integer  "WIS"
+    t.integer  "CON"
+    t.integer  "CHA"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "charclass_skills", force: :cascade do |t|
+    t.integer  "charclass_id"
+    t.integer  "skill_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "charclasses", force: :cascade do |t|
@@ -75,10 +81,7 @@ ActiveRecord::Schema.define(version: 20150322224943) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer  "total"
-    t.integer  "ability_mod"
-    t.integer  "ranks"
-    t.integer  "misc_mod"
+    t.string   "skill_name"
     t.string   "primary_attribute"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false

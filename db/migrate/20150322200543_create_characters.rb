@@ -7,7 +7,6 @@ class CreateCharacters < ActiveRecord::Migration
       t.integer    :level
       t.string     :deity
       t.string     :homeland
-      t.belongs_to :attributes
       t.belongs_to :race
       t.belongs_to :class
       t.string     :gender
@@ -22,6 +21,12 @@ class CreateCharacters < ActiveRecord::Migration
       t.integer    :fortitude
       t.integer    :reflex
       t.integer    :willpower
+      t.integer    :STR
+      t.integer    :DEX
+      t.integer    :INT
+      t.integer    :WIS
+      t.integer    :CON
+      t.integer    :CHA
 
       t.timestamps null: false
     end
